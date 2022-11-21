@@ -1,11 +1,15 @@
 
-## Getting Started
+# Getting Started
 
-First, run the development server:
+### Install dependencies
 
 ```bash
-npm run dev
-# or
+yarn
+```
+
+### Run the development server:
+
+```bash
 yarn dev
 ```
 
