@@ -1,11 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import { useEffect } from 'react'
+import styles from 'styles/pages/home.module.scss'
 
 const Home = (data: any) => {
-
   // const renderContent = () => {
   //   switch() {
   //     case ""
@@ -32,20 +31,20 @@ const Home = (data: any) => {
       </main>
 
       <footer className={styles.footer}>
-        
+
       </footer>
     </div>
   )
 }
 
 // This gets called on every request
-export async function getServerSideProps(context: any) {
+export async function getServerSideProps (context: any) {
   // Fetch data from external API
   // const res = await fetch(`https://.../data`)
   // const data = await res.json()
 // console.log(context)
   // Pass data to the page via props
-  return { props: { data: "Provided is working" } }
+  return { props: { data: 'Provided is working' } }
 }
 
 export default Home

@@ -1,5 +1,7 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link'
+import React from 'react'
+
+import styles from '../styles/pages/home.module.css'
 
 const SongList = () => {
   return (
@@ -9,4 +11,4 @@ const SongList = () => {
   )
 }
 
-export default React.memo(SongList);
+export default React.memo(SongList)

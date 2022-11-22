@@ -1,21 +1,22 @@
-import styles from '../styles/Home.module.css'
 import Link from 'next/link'
-import React, { memo, useEffect, useMemo, useState } from 'react'
+import React, { FC, memo, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { registerUser } from '../redux/actions/userActions'
 
-const Login = (data: any) => {
-  const dispatch = useDispatch();
+import { registerUser } from '../redux/actions/userActions'
+import styles from '../styles/pages/home.module.scss'
+
+const Login: FC = (data: any) => {
+  const dispatch = useDispatch()
 
   const [user, setUser] = useState({
-    login: "",
-    password: ""
+    login: '',
+    password: ''
   })
 
   const handleChange = (event: any) => {
     const { name, value } = event.target
 
-    setUser((pre: any)=>{
+    setUser((pre: any) => {
       return ({
         ...pre,
         [name]: value
@@ -30,31 +31,31 @@ const Login = (data: any) => {
     }))
   }
 
-  useEffect(()=>{
-console.log("Login render catch")    
+  useEffect(() => {
+    console.log('Login render catch')
   })
 
   return (
-    <div className={styles['login']}>
-      <Link href="/">Initial Page</Link>
+    <div className={styles.login}>
+      <Link href="/">Go to Home Page</Link>
       log
-      <input onChange={handleChange} name="login"/>
+      <input onChange={handleChange} name="login" placeholder='Login'/>
       pass
-      <input onChange={handleChange} name="password"/>
+      <input onChange={handleChange} name="password" placeholder='Password'/>
       <button onClick={handleClick}>Click</button>
     </div>
   )
 }
 
-export default memo(Login);
+export default memo(Login)
 
-// This gets called on every request
-export async function getServerSideProps(context: any) {
-  // Fetch data from external API
-  // const res = await fetch(`https://.../data`)
-  // const data = await res.json()
-console.log()
-const req =context.req
-// Pass data to the page via props
-  return { props: {data:"Hey"} }
-}
+/**
+ // To remember that we can use Next functionality :
+ *
+ // This gets called on every request
+ *  export async function getServerSideProps(context: any) {
+ *
+  // Pass data to the page via props
+ *   return { props: {data:"Hey"} }
+ *  }
+ */
