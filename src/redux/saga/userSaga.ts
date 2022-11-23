@@ -4,25 +4,21 @@ import { updateUser } from '../actions/userActions'
 
 const host = 'http://localhost:4444'
 
-const data = {
-  login: 'Test211asczxzx1_1',
-  password: '1zxcasdzx'
-}
 
 export function * registerSaga (action: any) { // TODO any
   try {
     const myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
 
-    const response: Object = yield fetch(`${host}/register`, {
+    const response: Object = yield fetch(`${host}/sign-in`, {
       method: 'POST',
       headers: myHeaders,
       mode: 'cors',
-      cache: 'default'
-      // body: JSON.stringify({
-      //   "login": action.payload.login,
-      //   "password": action.payload.password
-      // })
+      cache: 'default',
+      body: JSON.stringify({
+        "login": action.payload.login,
+        "password": action.payload.password
+      })
     }).then(async (response) => {
       return await response.json()
     })

@@ -1,0 +1,24 @@
+.login {
+    &-button {
+        $svg-size: 30px;
+        $button-size: 50px;
+
+        position: absolute;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        top: 10px;
+        right: 30px;
+        width: $button-size;
+        height: $button-size;
+        box-shadow: inset  3px 3px 10px 5px rgba(0, 94, 255, 0.267);
+        border-radius: 50%;
+        cursor: pointer;
+
+        svg {
+            width: $svg-size;
+            height: $svg-size;
+            fill: rgb(113, 136, 229)
+        } 
+    }
+}

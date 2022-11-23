@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server'
 
 // This function can be marked `async` if using `await` inside
 export function middleware (request: NextRequest) {
-  console.log(request.nextUrl.pathname)
+  // console.log(request.nextUrl.pathname)
 
   // if(request.url !== 'http://localhost:3000/') {
   // console.log(request.headers.get('Authorization'))

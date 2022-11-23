@@ -14,7 +14,7 @@ export const userReducer = (
 
       return { ...state, login, userID: id }
     default:
-      return { ...state }
+      return state
   }
 }
 
