@@ -7,7 +7,9 @@ export default function ProfilePage() {
 
   const id = useMemo(() => router.query.id as string, [router.query.id])
 
-  const [userData, setUserData] = useState<Response>({} as Response)
+  const [userData, setUserData] = useState<Response | any>({} as Response)
+
+  const [isLoading,  setIsLoading] = useState(false)
 
   const token = useRedux(state => state.user.token)
 
@@ -24,10 +26,15 @@ export default function ProfilePage() {
       })
         .then((response) => {
           if (!response.ok) throw "Bad response"
+          setIsLoading(false)
           return response.json()
         })
         .then(data => setUserData(data))
-        .catch(err => console.log(err))
+        .catch(err => {
+          setIsLoading(false)
+          setUserData({ Error : "Wrong user id" })
+          console.log(err)
+        })
     }
   }
 
@@ -45,6 +52,7 @@ export default function ProfilePage() {
   }
 
   useEffect(() => {
+    setIsLoading(true)
     query()
   }, [id, token])
 
@@ -55,10 +63,9 @@ export default function ProfilePage() {
   return (
     <div style={{display: 'grid', justifyContent: 'center', alignContent: 'center',
     minHeight:'100vh'}}>
-      User profile with id: { id } 
       <div style={{display: 'grid', margin: '10px 0 0 0'}} >
           {
-           renderItems()
+           isLoading ? <div>Loading...</div> : renderItems()
           }
       </div>
     </div>
