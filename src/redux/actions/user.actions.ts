@@ -8,6 +8,14 @@ export const registerUser = (payload: any) => ({
   payload
 })
 
+
+export const signInUser = (payload: any) => ({
+  type: 'SIGN_IN_USER',
+  payload
+})
+
+
+
 //   export const redefineCardList = (payload: any) => ({
 //     type: 'REDEFINE_CARD_LIST',
 //     payload,

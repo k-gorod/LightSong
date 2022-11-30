@@ -1,15 +1,20 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useRedux } from '../../hooks';
 import { AppState } from '../../redux';
-import { setModalVisible } from '../../redux/actions/modalActions';
+import { setModalVisible } from '../../redux/actions/modal.actions';
 import Login from '../Login';
+import Shadow from '../Shadow';
 import styles from './modal.module.scss';
 
-export const Modal: FC = () => {
-    const modalState = useSelector((state: AppState) => state.modal)
-    
-    const [isVisible, setIsVisible] = useState(false)
+interface IModalState {
+    content: string,
+    isVisible: boolean
+}
 
+export const Modal: FC = () => {
+    const modalState = useRedux<IModalState>((state) => state.modal)
+    
     const dispatch = useDispatch();
 
     const shadowClickHandler = () => {
@@ -25,15 +30,12 @@ export const Modal: FC = () => {
             default :
                 return ""
         }
-    } 
+    }
 
-    useEffect(()=>{
-        setIsVisible(modalState.isVisible)
-    }, [modalState])
 
-    return isVisible ? (
+    return modalState?.isVisible ? (
         <div className={styles['modal-window']}>
-            <div className={styles['modal-shadow']} onClick={shadowClickHandler} />
+            <Shadow onClick={shadowClickHandler} />
             <div className={styles['modal-contentWrapper']}>
                 { renderContent() }
             </div>

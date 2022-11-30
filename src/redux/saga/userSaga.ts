@@ -1,16 +1,18 @@
 import { put, takeEvery } from 'redux-saga/effects'
+import { UserResponseType } from '../../types'
 
-import { updateUser } from '../actions/userActions'
+import { updateUser } from '../actions/user.actions'
 
 const host = 'http://localhost:4444'
 
 
-export function * registerSaga (action: any) { // TODO any
+
+export function * signInUserSaga (action: any) { // TODO any
   try {
     const myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
 
-    const response: Object = yield fetch(`${host}/sign-in`, {
+    const response: UserResponseType = yield fetch(`${host}/sign-in`, {
       method: 'POST',
       headers: myHeaders,
       mode: 'cors',
@@ -22,14 +24,20 @@ export function * registerSaga (action: any) { // TODO any
     }).then(async (response) => {
       return await response.json()
     })
-    yield put(updateUser(response))
+
+    yield put(updateUser({
+      token: response.auth.token,
+      login: response.user.login,
+      username: response.user.username,
+      userId: response.user.id
+    }))
   } catch (error) {
     console.log(error)
   }
 }
 
 const userSaga = [
-  takeEvery('REGISTER_USER', registerSaga)
+  takeEvery('SIGN_IN_USER', signInUserSaga)
 ]
 
 export default userSaga

@@ -1,6 +1,6 @@
 
 const initialState = {
-    isVisible: true,
+    isVisible: false,
     content: "",
   }
   

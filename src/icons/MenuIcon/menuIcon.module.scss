@@ -1,0 +1,16 @@
+.menuIcon {
+    display: grid;
+    width: 25px;
+    height: 20px;
+    background-color: transparent;
+    justify-items: stretch;
+    align-content: space-between;
+    padding: 1px;
+
+
+    div {
+        height: 4px;
+        border-radius: 10px;
+        background-color: rgba(81, 101, 255, 0.766);
+    }
+}

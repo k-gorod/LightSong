@@ -1,7 +1,9 @@
 
 const initialState = {
   login: '',
-  userID: ''
+  userId: '',
+  username: '',
+  token: ''
 }
 
 export const userReducer = (
@@ -10,9 +12,13 @@ export const userReducer = (
 ) => {
   switch (action.type) {
     case 'UPDATE_USER':
-      const { id, login } = action.payload.data
+      const updateUserData = action.payload
 
-      return { ...state, login, userID: id }
+      return { ...state, ...updateUserData }
+    case 'REGISTER_USER':
+      const registerData = action.payload
+
+      return { ...state, login: registerData.login, userID: registerData.id }
     default:
       return state
   }

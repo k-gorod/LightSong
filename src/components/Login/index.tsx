@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
-import { registerUser } from "../../redux/actions/userActions"
+import { registerUser, signInUser, updateUser } from "../../redux/actions/user.actions"
 
 import styles from './login.module.scss'
 
@@ -24,9 +24,9 @@ const Login: FC = (data: any) => {
   }
 
   const handleClick = () => {
-    dispatch(registerUser({
+    dispatch(signInUser({
       login: user.login,
-      password: user.password
+      password: user.password,
     }))
   }
 

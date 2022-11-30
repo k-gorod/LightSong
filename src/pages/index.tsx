@@ -1,11 +1,25 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import LoginButton from '../components/LoginButton'
+import MenuButton from '../components/MenuButton'
+import Sidebar from '../components/Sidebar'
+import { useRedux } from '../hooks'
+import { AppState } from '../redux'
 import styles from '../styles/pages/home.module.scss'
+import { UserType } from '../types'
+
+
 
 const Home = (data: any) => {
+  
+
+
+  const userData = useRedux<{ username?: string}>((state) => state.user)
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,10 +28,9 @@ const Home = (data: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <LoginButton />
-        <Link href="/songlist">Song List</Link>
-        <div>{} : Provided props</div>
+      <main className={styles.main} style={{display: 'grid', justifyContent: 'center', alignItems: 'center',
+    minHeight:'100vh'}}>
+          Home Page
       </main>
 
       <footer className={styles.footer}>
@@ -36,5 +49,7 @@ export async function getServerSideProps (context: any) {
   // Pass data to the page via props
   return { props: { data: 'Provided is working' } }
 }
+
+
 
 export default Home
