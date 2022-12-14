@@ -1,6 +1,6 @@
 @import '../../styles/constants/variables.scss';
 
-.menuIcon {
+.userIcon {
     position: relative;
     top: 0;
     left: 0;
@@ -9,6 +9,7 @@
     height: 100%;
 
     path {
+        fill: $primary-color;   
         stroke: $primary-color;
     }
 }

@@ -1,6 +1,7 @@
 
 const initialState = {
     sideBarIsVisible: false,
+    logoIsHighlighted: false
 }
   
 const appStateReducer = (
@@ -9,9 +10,9 @@ const appStateReducer = (
   ) => {
     switch (action.type) {
       case 'SET_SIDEBAR_IS_OPEN':
-        
         return { ...state, sideBarIsVisible: action.payload }
-
+      case 'SET_LOGO_HIGHLIGHT_STATE' :
+        return { ...state, logoIsHighlighted: action.payload }
       default:
         return state
     }

@@ -12,9 +12,9 @@ export function loadFromLocalStorage () {
     try {
         const serialisedState = localStorage.getItem('persistantState')
         if (serialisedState === null) return undefined
-        console.log(JSON.parse(serialisedState))
-
-        return JSON.parse(serialisedState)
+        const json = JSON.parse(serialisedState);
+        delete json.appState.logoIsHighlighted
+        return 
     } catch (e) {
         console.warn(e)
         return undefined

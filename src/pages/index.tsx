@@ -1,39 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useRedux } from '../hooks'
-import CircleLightSongIcon from '../icons/CircleLightSongIcon';
-import LightSongLogoIcon from '../icons/LightSongLogoIcon';
+import { setLogoHighlightState } from '../redux/actions/appState.actions';
 import styles from '../styles/pages/home.module.scss'
 
 
 
 const Home = (data: any) => {
+
+  const dispatch = useDispatch()
+
+  const logoIsHighlighted = useRedux((state) => state.appState.logoIsHighlighted)
+
   const userData = useRedux<{ username?: string}>((state) => state.user)
 
-  const [input, setInput] = useState("");
 
-  const onChangeHandle = ({target})=>{
-    // 3,2,4
-    // target.value.reduce((acc, el)=>{
-    //   return 
-    // },'')
-    console.log(
-      target.value
-    )
+  useEffect(()=>{
+    if (!logoIsHighlighted) dispatch(setLogoHighlightState(true))
 
-    // setInput(
-    //   target.value.split().reduce((acc, el)=>{
-    //     return acc + "*"
-    //   }, "")
-    // )
-
-    setInput(target.value.split("").reduce((acc, el)=>{
-      return acc + "*" + (
-          acc.length === 2 ||
-          acc.length === 6 ?
-          " " : ""
-        )
-    }, ""))
-  }
+    return () => {
+      dispatch(setLogoHighlightState(false))
+    }
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -41,9 +29,6 @@ const Home = (data: any) => {
         className={styles.main}
         style={{display: 'grid', justifyContent: 'center', alignItems: 'center', minHeight:'100vh'}}
       >
-        <LightSongLogoIcon />
-        <CircleLightSongIcon />
-          <input value={input} onChange={onChangeHandle} />
       </main>
 
       <footer className={styles.footer}>

@@ -6,13 +6,14 @@ import store from '../redux'
 import Modal from '../components/Modal';
 
 import '../styles/index.scss'
-import MenuButton from '../components/MenuButton';
-import LoginButton from '../components/LoginButton';
 import Sidebar from '../components/Sidebar';
 import Head from 'next/head';
+import Header from '../components/Header';
+import { LightSongLogoIcon } from '../icons';
 
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+
   return (
       <Provider store={store}>
         <Head>
@@ -26,12 +27,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <meta name="msapplication-TileColor" content="#000" />
           <meta name="theme-color" content="#ffffff" />
         </Head>
+        <Header />
         <Component {...pageProps} />
-        <LoginButton />
-        <MenuButton />
+        <LightSongLogoIcon />
         <Sidebar />
         <Modal />
-          
       </Provider>
   )
 }

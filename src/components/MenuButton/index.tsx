@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useRedux } from "../../hooks";
-import MenuIcon from "../../icons/MenuIcon";
+import { MenuIcon } from "../../icons";
 import { setSidebarIsOpen } from "../../redux/actions/appState.actions";
 import styles from './menuButton.module.scss';
 

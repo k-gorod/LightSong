@@ -1,4 +1,7 @@
+@import '../../styles/constants/variables.scss'; 
+
 .circleLightSongIcon {
-    color: red;
-    width: 100px
+    color: $secondary-dark-color;
+    width: 100px;
+    transition: all ease .5;
 }
