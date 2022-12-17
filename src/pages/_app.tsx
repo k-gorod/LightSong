@@ -10,6 +10,7 @@ import Sidebar from '../components/Sidebar';
 import Head from 'next/head';
 import Header from '../components/Header';
 import { LightSongLogoIcon } from '../icons';
+import { CenterLogo } from '../components/CenterLogo';
 
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -29,7 +30,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         </Head>
         <Header />
         <Component {...pageProps} />
-        <LightSongLogoIcon />
+        <CenterLogo />
+        {/* <LightSongLogoIcon /> */}
         <Sidebar />
         <Modal />
       </Provider>

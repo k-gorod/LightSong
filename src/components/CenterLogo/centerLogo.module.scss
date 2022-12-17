@@ -1,0 +1,18 @@
+@import '../../styles/constants/variables.scss'; 
+
+.centerLogo_wrapper {
+    user-select: none;
+    max-width: 515px;
+    max-height: 505px;
+    width: 50vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: color 1s;
+    z-index: -1;
+
+    &-highlighted {
+        z-index: 2;
+    }
+}

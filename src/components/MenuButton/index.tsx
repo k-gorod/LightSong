@@ -13,11 +13,11 @@ const MenuButton = () => {
         dispatch(setSidebarIsOpen(true))
     }
 
-    return !menuIsOpen ? (
+    return (
         <div className={styles['menuButton']} onClick={handleClick}>
             <MenuIcon />
         </div>
-    ) : null
+    )
 }
 
 export default MenuButton;

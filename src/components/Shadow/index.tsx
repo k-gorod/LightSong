@@ -12,7 +12,8 @@ const Shadow: FC<IShadow> = ({ onClick }) => {
     useEffect(()=>{
         const timeout = setTimeout(()=>{
             setTransitionStyle({
-                background: 'rgba(0, 0, 0, 0.3)'
+                backdropFilter: 'blur(3px)',
+                WebkitBackdropFilter: 'blur(3px)',
             })
         }, 0)
         return () => {
