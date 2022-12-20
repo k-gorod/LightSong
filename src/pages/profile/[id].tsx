@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router'
 import { useEffect, useMemo, useState } from 'react'
+import PageContent from '../../components/PageContent'
 import { useRedux } from '../../hooks'
+import styles from '../../styles/pages/profile.module.scss'
 
 export default function ProfilePage() {
   const router = useRouter()
@@ -15,7 +17,7 @@ export default function ProfilePage() {
 
   const query = () => {
     const myHeaders = new Headers()
-    myHeaders.append('Authorization', `Bearer ${token}`)
+    token ?? myHeaders.append('Authorization', `Bearer ${token}`)
 
     if(id){
       fetch(`http://localhost:4444/user/get?id=${id}`, {
@@ -44,6 +46,7 @@ export default function ProfilePage() {
         return (
           <div key={`${index}-userInfo_item`} style={{display: 'grid', gridAutoFlow:"column", gridGap: '30px'}}>
             <div>{key}</div>
+            {/** @ts-ignore */}
             <div>{key === 'createdAt' || key === 'lastSingIn' ? (new Date(value).toDateString()) : (Array.isArray(value) ? value.length : value) }</div>
           </div>
         )
@@ -61,13 +64,12 @@ export default function ProfilePage() {
   }, [userData])
 
   return (
-    <div style={{display: 'grid', justifyContent: 'center', alignContent: 'center',
-    minHeight:'100vh'}}>
-      <div style={{display: 'grid', margin: '10px 0 0 0'}} >
+    <PageContent className={styles['profilePage']}>
+      <div>
           {
            isLoading ? <div>Loading...</div> : renderItems()
           }
       </div>
-    </div>
+    </PageContent>
   )
 }

@@ -15,3 +15,7 @@ export type UserType = {
   username: string,
   token: string
 }
+
+export interface WheelEvent extends Event {
+  wheelDelta?: number
+}

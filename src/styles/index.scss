@@ -14,8 +14,8 @@ body {
     left: 0;
     min-width: 100vw;
     min-height: 100vh;
-    z-index: -10;
     background: $primary-main-color;
+    overflow: hidden;
 }
 
 a {
@@ -25,7 +25,6 @@ a {
 
 * {
   box-sizing: border-box;
-  z-index: 1;
 }
 
 @media (prefers-color-scheme: dark) {

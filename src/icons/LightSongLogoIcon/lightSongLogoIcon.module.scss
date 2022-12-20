@@ -4,9 +4,13 @@
     color: $primary-light-color;
     max-width: 100%;
     max-height: 100%;
-    transition: color 1s;
+    transition: all 1s;
+    position: relative;
+    z-index: inherit;
+    filter: none;
 
     &-highlighted {
+        filter: drop-shadow(-3px 3px 5px $primary-text-color);
         color: $primary-dark-color
     }
 }

@@ -23,7 +23,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"/>
           <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"/>
           <link rel="icon" href="/assets/favicon.ico"/>
-          <link rel="manifest" href="/assets/site.webmanifest" />
+          {/* <link rel="manifest" href="/assets/site.webmanifest" /> */}
           <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#000000" />
           <meta name="msapplication-TileColor" content="#000" />
           <meta name="theme-color" content="#ffffff" />
@@ -31,7 +31,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <Header />
         <Component {...pageProps} />
         <CenterLogo />
-        {/* <LightSongLogoIcon /> */}
         <Sidebar />
         <Modal />
       </Provider>

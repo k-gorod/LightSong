@@ -1,0 +1,39 @@
+@mixin mobile-bp() {
+    @media (
+        max-width: 480px
+    ) {
+        @content;
+    }
+}
+
+@mixin tablet-bp() {
+    @media (
+        max-width: 1024px
+    ) {
+        @content;
+    }
+}
+
+
+@mixin desktop-bp() {
+    @media (
+        max-width: 1400px
+    ) {
+        @content;
+    }
+}
+
+
+@mixin lg-bp() {
+    @media (
+        min-width: 1400px
+    ) {
+        @content;
+    }
+}
+
+// 320px — 480px: Mobile devices
+// 481px — 768px: iPads, Tablets
+// 769px — 1024px: Small screens, laptops
+// 1025px — 1200px: Desktops, large screens
+// 1201px and more —  Extra large screens, TV
