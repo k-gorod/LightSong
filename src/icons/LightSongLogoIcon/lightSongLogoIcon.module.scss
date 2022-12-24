@@ -10,7 +10,7 @@
     filter: none;
 
     &-highlighted {
-        filter: drop-shadow(-3px 3px 5px $primary-text-color);
+        filter: drop-shadow(-5px 5px 2px $primary-text-color);
         color: $primary-dark-color
     }
 }

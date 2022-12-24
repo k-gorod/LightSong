@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useMemo, useState } from 'react'
 import PageContent from '../../components/PageContent'
 import { useRedux } from '../../hooks'
+import { useRequest } from '../../hooks/useRequest'
 import styles from '../../styles/pages/profile.module.scss'
 
 export default function ProfilePage() {
@@ -9,36 +10,7 @@ export default function ProfilePage() {
 
   const id = useMemo(() => router.query.id as string, [router.query.id])
 
-  const [userData, setUserData] = useState<Response | any>({} as Response)
-
-  const [isLoading,  setIsLoading] = useState(false)
-
-  const token = useRedux(state => state.user.token)
-
-  const query = () => {
-    const myHeaders = new Headers()
-    token ?? myHeaders.append('Authorization', `Bearer ${token}`)
-
-    if(id){
-      fetch(`http://localhost:4444/user/get?id=${id}`, {
-        headers: myHeaders,
-        method: 'GET',
-        mode: 'cors',
-        cache: 'default',
-      })
-        .then((response) => {
-          if (!response.ok) throw "Bad response"
-          setIsLoading(false)
-          return response.json()
-        })
-        .then(data => setUserData(data))
-        .catch(err => {
-          setIsLoading(false)
-          setUserData({ Error : "Wrong user id" })
-          console.log(err)
-        })
-    }
-  }
+  const [userData, isLoading] = useRequest(`http://localhost:4444/user/get?id=${id}`)
 
   const renderItems = () => {
     return userData ? (
@@ -53,11 +25,6 @@ export default function ProfilePage() {
       })
     ) : null
   }
-
-  useEffect(() => {
-    setIsLoading(true)
-    query()
-  }, [id, token])
 
   useEffect(()=>{
     console.log(userData)

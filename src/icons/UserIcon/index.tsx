@@ -7,8 +7,6 @@ interface IUserIcon {
 }
 
 export const UserIcon: FC<IUserIcon> = ({ className, onClick }) => {
-    console.log('UserIcon')
-
     return (
         <svg className={`${styles['userIcon']} ${className ?? ""}`} onClick={onClick} viewBox="0 0 60 60" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <circle cx="30" cy="30" r="30" fill="currentColor"/>

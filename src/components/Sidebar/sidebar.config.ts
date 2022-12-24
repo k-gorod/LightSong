@@ -7,6 +7,10 @@ export const menuOptions = [
         text: "Profile",
         url: 'profile/1'
     },
+    // {
+    //     text: "Settings",
+    //     url: 'settings'
+    // },
     {
         text: "Songs",
         url: "songs/",

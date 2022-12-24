@@ -14,7 +14,7 @@ export function loadFromLocalStorage () {
         if (serialisedState === null) return undefined
         const json = JSON.parse(serialisedState);
         delete json.appState.logoIsHighlighted
-        return 
+        return json
     } catch (e) {
         console.warn(e)
         return undefined

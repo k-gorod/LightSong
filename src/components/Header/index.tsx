@@ -11,8 +11,6 @@ interface IHeader {
 }
 
 const Header: FC<IHeader> = () => {
-    console.log('Header')
-
     return (
         <div className={styles['header']}>
             <MenuButton />

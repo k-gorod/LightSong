@@ -1,16 +1,16 @@
 // import { useRouter } from 'next/router'
 import PageContent from '../../components/PageContent'
-import styles from '../../styles/pages/playlists.module.scss'
 
+import styles from '../../styles/pages/settings.module.scss'
 
-export default function PlaylistsPage() {
+export default function SettingsPage() {
 //   const router = useRouter()
 //   const id = router.query.id as string
 
   return (
-    <PageContent className={styles['playlistsPage']}>
+    <PageContent className={styles['settingsPage']}>
       <div>
-        Playlists page
+        Settings Page
       </div>
     </PageContent>
   )

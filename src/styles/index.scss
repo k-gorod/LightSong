@@ -16,6 +16,9 @@ body {
     min-height: 100vh;
     background: $primary-main-color;
     overflow: hidden;
+    * {
+      font-family: Inter;
+    } 
 }
 
 a {

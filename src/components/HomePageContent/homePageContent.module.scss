@@ -10,7 +10,8 @@
     max-width: 70vw;
     max-height: 70vh;
     display: grid;
-    grid-gap: 30px;
+    grid-gap: 60px;
+    grid-template-columns: 50% 50%;
     z-index: 3;
     pointer-events: none;
     grid-auto-flow: column;
@@ -28,7 +29,7 @@
         height: 100%;
         max-height: 70vh;
         transition: transform 1s ease;
-        transform: translateY(100%);
+        transform: translateY(108%);
 
         @include tablet-bp {
             transform: translateY(200%);

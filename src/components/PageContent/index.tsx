@@ -7,7 +7,6 @@ interface IPageContent {
 }
 
 const PageContent: FC<IPageContent> = ({ children, className }) => {
-    console.log('PageContent')
 
     return (
         <div className={`${styles['pageContent']} ${className ?? ""}`}>

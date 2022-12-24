@@ -1,5 +1,8 @@
 import React, { FC } from 'react'
 import ContentList from '../ContentList'
+import PlaylistListItem from '../PlaylistListItem'
+import SongListItem from '../SongListItem'
+import { fakePlaylist, fakeSong } from './fakedata'
 import styles from './homePageContent.module.scss'
 
 interface IHomePageContent {
@@ -13,18 +16,14 @@ const HomePageContent: FC<IHomePageContent> = ({ active }) => {
             <ContentList
                 className={`${styles["homePageContent_column"]} ${ active ? styles["homePageContent_column-centered"] : "" }`}
                 title="Popular songs"
-                ItemComponent={({ children })=> ( <div>{ children }</div> )}
-                listData={[
-                    "1","2","3"
-                ]}
+                ItemComponent={SongListItem}
+                listData={fakeSong}
             />
             <ContentList
                 className={`${styles["homePageContent_column"]} ${ active ? styles["homePageContent_column-centered"] : "" }`}
                 title="Popular playlist"
-                ItemComponent={({ children })=> ( <div>{ children }</div> )}
-                listData={[
-                    "1","2","3"
-                ]}
+                ItemComponent={PlaylistListItem}
+                listData={fakePlaylist}
             />
         </div>
     )
