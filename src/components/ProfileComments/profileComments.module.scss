@@ -1,0 +1,29 @@
+@import '../../styles/constants/variables.scss'; 
+
+.profileComments {
+    width: 100%;
+    background: $half-transparent;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+
+
+    :global(.listParent) {
+        align-self: flex-start;
+        // grid-template-columns: 50% 50%;
+        
+        :global(.listItem) {
+            div {
+                justify-self: start;
+                justify-items: start;
+
+                p {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

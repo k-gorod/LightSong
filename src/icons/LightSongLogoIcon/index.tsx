@@ -3,7 +3,7 @@ import styles from './lightSongLogoIcon.module.scss'
  
 interface ILightSongLogoIcon {
     className?: string,
-    onClick: () => void,
+    onClick?: () => void,
     isHighlighted?: boolean | null
 }
 

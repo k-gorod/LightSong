@@ -1,0 +1,46 @@
+@import '../../styles/constants/variables.scss';
+
+// @mixin ch($children) {
+    
+    
+// }
+
+.profileFavorite {
+    width: 100%;
+    background: $half-transparent;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+
+
+    :global(.listParent) {
+        grid-template-columns: 50% 50%;
+
+        // @each $child in 1, 2, 3, 4 {
+        //     > :nth-child(#{$child}) {
+        //         grid-column: 2/3;   
+        //     }
+        // }
+
+        // @each $child in 5, 6, 7, 8 {
+        //     > :nth-child(#{$child}) {
+        //         grid-column: 1/2;   
+        //     }
+        // }
+        
+        // @each $child in 1, 3, 5 {
+        //     > :nth-child(#{$child}) {
+        //         grid-row: 1/2;   
+        //     }
+        // }
+
+        // @each $child in 2, 4, 6 {
+        //     > :nth-child(#{$child}) {
+        //         grid-row: 2/3;   
+        //     }
+        // }
+    }
+}

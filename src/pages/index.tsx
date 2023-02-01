@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect } from 'react';
+import { CSSProperties, memo, useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import HomePageContent from '../components/HomePageContent';
 import PageContent from '../components/PageContent';
@@ -11,8 +11,11 @@ const Home = (data: any) => {
 
   const dispatch = useDispatch()
 
-  const logoIsHighlighted = useRedux<boolean>((state) => state.appState.logoIsHighlighted)
-
+  const logoIsHighlighted = useRedux<boolean>((state) => state.appState.logoIsHighlighted, true);
+  
+  /**
+   * catch wheel event to affect scroll
+   */
   const listnerCallback = useCallback((event: WheelEvent) => {
     if (event?.wheelDelta && event?.wheelDelta < 0) {
       if (logoIsHighlighted) dispatch(setLogoHighlightState(false))
@@ -28,7 +31,7 @@ const Home = (data: any) => {
   }, [logoIsHighlighted, dispatch, setLogoHighlightState])
 
   useEffect(()=>{
-    if (!logoIsHighlighted) dispatch(setLogoHighlightState(true))
+    dispatch(setLogoHighlightState(true))
 
     return () => {
       dispatch(setLogoHighlightState(false));
@@ -37,7 +40,7 @@ const Home = (data: any) => {
 
   return (
     <PageContent>
-          <HomePageContent active={!logoIsHighlighted || false} />
+          <HomePageContent active={!logoIsHighlighted} />
     </PageContent>
   )
 }

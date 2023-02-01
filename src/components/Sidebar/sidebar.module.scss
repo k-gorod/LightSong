@@ -1,3 +1,4 @@
+    @import '../../styles/constants/mixins.scss';
     @import '../../styles/constants/variables.scss';
 
     .sidebar {
@@ -21,21 +22,27 @@
         justify-items: center;
         font-weight: 500;
         font-size: 32px;
-        // grid-gap: 30px;
         width: 100%;
 
-        transition: all .5s;
+        transition: transform .5s;
+
+
+        @include tablet-bp { // temporary remove animation coz of lagging
+            transition: none;
+        }
 
         &-visible {
             transform: scaleX(1);
+            
             opacity: 1;
         }
 
         &-hidden {
             transform: scaleX(0);
 
+
             .sidebar_item {
-                filter: blur(10px);
+                // filter: blur(10px);
                 text-shadow: 0 0 0 transparent;
                 border: 0 solid transparent;;
                 opacity: 0;
@@ -43,8 +50,8 @@
         }
 
         &_wrapper {
-            display: grid
-            
+            display: grid;
+            position: relative;
         }
 
         &_item {
@@ -52,9 +59,9 @@
             padding: 27px 0;
             min-width: 100px;
             font-size: 40px;
-            transition: all .5s;
+            // transition: all .5s;
             width: max-content;
-            text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3), 0px -4px 1px #ffffff;
+            text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             border-radius: 45px;
             width: 90%;

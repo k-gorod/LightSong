@@ -3,7 +3,7 @@ import styles from './circleLightSongIcon.module.scss'
  
 interface ICircleLightSongIcon {
     className?: string
-    onClick: () => void
+    onClick?: () => void
 }
 
 export const CircleLightSongIcon: FC<ICircleLightSongIcon> = ({ className, onClick }) => (

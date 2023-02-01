@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useRedux } from '../../hooks'
 import { LightSongLogoIcon } from '../../icons'
@@ -13,10 +13,10 @@ export const CenterLogo: FC<ICenterLogo> = ({  }) => {
 
     const dispatch = useDispatch()
 
-    const logoIsHighlighted = useRedux<boolean>((state) => state.appState.logoIsHighlighted)
+    const logoIsHighlighted = useRedux<boolean>((state) => state.appState.logoIsHighlighted, false)
 
     const onClick = () => {
-        dispatch(setLogoHighlightState(!logoIsHighlighted))
+        dispatch(setLogoHighlightState(false))
     }
 
     return (

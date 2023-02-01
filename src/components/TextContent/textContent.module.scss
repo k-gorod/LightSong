@@ -1,7 +1,8 @@
+@import '../../styles/constants/variables.scss';
 @import '../../styles/constants/mixins.scss';
 @import '../../styles/constants/variables.scss';
 
-.contentList {
+.textContent {
     border-radius: 45px;
     background: rgba(255, 252, 233, 0.05);
     
@@ -30,10 +31,13 @@
         }
     }
 
-    &_listParent {
-        display: grid;
+    &_content {
+        font-weight: 500;
+        font-size: 20px;
+        color: $dark-gray-color;
         width: 100%;
-        padding: 0 30px;
-        margin: 0 0 20px 0;
+        height: 100%;
+        padding: 25px 25px 48px 25px;
+        text-align: center;
     }
 }

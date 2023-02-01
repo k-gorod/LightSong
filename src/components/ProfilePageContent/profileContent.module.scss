@@ -1,0 +1,38 @@
+.profileContent {
+    $space-between-rows: 25px;
+    $space-between-columns: 48px;
+
+    // ==========
+
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 230px auto;
+    height: 100vh;
+    
+
+    &_contentWrapper {
+        display: grid;
+        grid-template-columns: 55% auto;
+        padding: 25px;
+        width: 100vw;
+
+        grid-column-gap: $space-between-columns;
+    }
+
+    .profileContent_leftContent, .profileContent_rightContent {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-row-gap: $space-between-rows;
+    }
+    
+    .profileContent_rightContent {
+        grid-template-rows: min-content auto; // not sure
+
+    }
+
+    .profileContent_leftContent {
+        grid-template-rows: minmax(min-content, calc(50% - ($space-between-rows / 2))) minmax(min-content, calc(50% - ($space-between-rows / 2)));
+    }
+}

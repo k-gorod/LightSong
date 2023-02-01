@@ -4,17 +4,18 @@ import ListItem from '../ListItem';
 
 
 interface ISongListItem {
+    id: number,
     author: string,
     title: string,
     usedInThisCountPlaylists: number,
     likes: number
 }
 
-const SongListItem: FC<ISongListItem> = ({ author, title, usedInThisCountPlaylists, likes }) => {
+const SongListItem: FC<ISongListItem> = ({ id, author, title, usedInThisCountPlaylists, likes }) => {
     const router = useRouter();
 
     return (
-        <ListItem title={title} text={author} type={'song'} usedInThisCountPlaylists={usedInThisCountPlaylists} likes={likes} onClick={()=> router.push('/songs')} />
+        <ListItem id={id} title={title} text={author} type={'song'} usedInThisCountPlaylists={usedInThisCountPlaylists} likes={likes} onClick={()=> router.push('/songs')} />
     )
 }
 

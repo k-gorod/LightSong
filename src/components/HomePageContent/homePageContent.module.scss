@@ -1,6 +1,8 @@
 @import '../../styles/constants/mixins.scss';
 
 .homePageContent {
+    $gap: 60px;
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -10,11 +12,12 @@
     max-width: 70vw;
     max-height: 70vh;
     display: grid;
-    grid-gap: 60px;
-    grid-template-columns: 50% 50%;
+    grid-gap: $gap;
+    grid-template-columns: calc(50% - $gap/2) calc(50% - $gap/2);
     z-index: 3;
     pointer-events: none;
     grid-auto-flow: column;
+    transition: top 1s ease;
 
     @include tablet-bp {
         grid-auto-flow: row;

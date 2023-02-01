@@ -46,6 +46,7 @@ export const fakePlaylist = [
 
 export const fakeSong = [
     {
+        id: 1,
         author: "Song author",
         title: "Song Name",
         type: 'song',
@@ -53,6 +54,7 @@ export const fakeSong = [
         usedInThisCountPlaylists: 11
     },
     {
+        id: 2,
         author: "Song author2",
         title: "Song Name2",
         type: 'song',
@@ -60,6 +62,7 @@ export const fakeSong = [
         usedInThisCountPlaylists: 10
     },
     {
+        id: 3,
         author: "Song author3",
         title: "Song Name3",
         type: 'song',
@@ -67,6 +70,7 @@ export const fakeSong = [
         usedInThisCountPlaylists: 9
     },
     {
+        id: 4,
         author: "Song author4",
         title: "Song Name4",
         type: 'song',
@@ -74,6 +78,7 @@ export const fakeSong = [
         usedInThisCountPlaylists: 9
     },
     {
+        id: 5,
         author: "Song author5",
         title: "Song Name5",
         type: 'song',
@@ -81,6 +86,7 @@ export const fakeSong = [
         usedInThisCountPlaylists: 4
     },
     {
+        id: 6,
         author: "Marta",
         title: " Маладэц!!!",
         type: 'song',

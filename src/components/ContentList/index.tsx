@@ -15,7 +15,7 @@ const ContentList: FC<IContentList> = ({ className, title, listData, ItemCompone
             <div className={styles['contentList_title']}>
                 <h2>{title}</h2>
             </div>
-            <ul className={styles['contentList_listParent']}>
+            <ul className={`${styles['contentList_listParent']} listParent`}>
                 {
                     listData.map((data, index)=>(
                         <ItemComponent key={`${index}-listItem-${title}`} {...data} />

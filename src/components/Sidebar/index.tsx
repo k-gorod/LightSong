@@ -45,8 +45,9 @@ const Sidebar: FC<ISidebar> = () => {
 
 
     return (
-        <div className={styles['sidebar_wrapper']}>
+        <>
             {renderShadow()}
+        <div className={styles['sidebar_wrapper']}>
             <div className={`${styles['sidebar']} ${isVisible ? styles['sidebar-visible'] : styles['sidebar-hidden'] }`} onClick={clickHandler}>
                 {
                     menuOptions.map(({text, url}, index)=>(
@@ -55,6 +56,7 @@ const Sidebar: FC<ISidebar> = () => {
                 }
             </div>
         </div>
+        </>
     )
 }
 

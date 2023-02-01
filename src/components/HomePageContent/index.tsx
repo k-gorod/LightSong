@@ -1,4 +1,5 @@
-import React, { FC } from 'react'
+import { useAnim } from 'anim-react'
+import React, { CSSProperties, FC, useEffect, useRef, useState } from 'react'
 import ContentList from '../ContentList'
 import PlaylistListItem from '../PlaylistListItem'
 import SongListItem from '../SongListItem'
@@ -11,8 +12,16 @@ interface IHomePageContent {
 
 const HomePageContent: FC<IHomePageContent> = ({ active }) => {
 
+    const [initialTransition, setInitialTransition] = useState<CSSProperties>({
+        top: '100%',
+    })
+
+    useEffect(()=>{
+        setInitialTransition({})
+    }, [])
+
     return (
-        <div className={styles['homePageContent']}>
+        <div className={styles['homePageContent']} style={initialTransition}>
             <ContentList
                 className={`${styles["homePageContent_column"]} ${ active ? styles["homePageContent_column-centered"] : "" }`}
                 title="Popular songs"

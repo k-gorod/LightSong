@@ -1,7 +1,7 @@
 
 const initialState = {
     sideBarIsVisible: false,
-    logoIsHighlighted: false
+    logoIsHighlighted: true
 }
   
 const appStateReducer = (

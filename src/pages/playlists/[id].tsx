@@ -13,7 +13,7 @@ const router = useRouter()
 
 const id = useMemo(() => router.query.id as string, [router.query.id])
 
-const [playlistData, isLoading] = useRequest(id && `http://localhost:4444/playlist/get?id=${id}`)
+const [playlistData, isLoading] = useRequest(id ? `http://localhost:4444/playlist/get?id=${id}` : undefined)
 
 
 const renderItems = () => {

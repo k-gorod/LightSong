@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react"
 import { useRedux } from "./useRedux"
 
-export const useRequest = (url: string, method?: string) => {
+export const useRequest = (url?: string, method?: string) => {
     
   const [response, setResponse] = useState<Response | any>({} as Response)
 
