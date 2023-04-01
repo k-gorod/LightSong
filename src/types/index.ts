@@ -19,3 +19,5 @@ export type UserType = {
 export interface WheelEvent extends Event {
   wheelDelta?: number
 }
+
+export type ScreenType = "mobile" | "tablet" | "desktop" | "lg" | null

@@ -1,7 +1,8 @@
 
 const initialState = {
     sideBarIsVisible: false,
-    logoIsHighlighted: true
+    logoIsHighlighted: true,
+    screenType: "desktop"
 }
   
 const appStateReducer = (
@@ -13,6 +14,8 @@ const appStateReducer = (
         return { ...state, sideBarIsVisible: action.payload }
       case 'SET_LOGO_HIGHLIGHT_STATE' :
         return { ...state, logoIsHighlighted: action.payload }
+      case 'SET_SCREEN_TYPE' :
+        return { ...state, screenType: action.payload }
       default:
         return state
     }
