@@ -5,7 +5,7 @@ export const useRequest = (url?: string, method?: string) => {
     
   const [response, setResponse] = useState<Response | any>({} as Response)
 
-  const [isLoading,  setIsLoading] = useState(false)
+  const [isLoading,  setIsLoading] = useState(false);
 
   const token = useRedux(state => state.user.token)
 

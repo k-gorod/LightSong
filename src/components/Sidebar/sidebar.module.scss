@@ -5,11 +5,11 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: transparent;
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-        border: solid 1px $primary-dark-color;
-        box-shadow: inset -10px 0px 100px 10px $primary-dark-color    ;
+        background: $primary-hightlight-color-80 ;
+        // -webkit-backdrop-filter: blur(10px);
+        // backdrop-filter: blur(10px);
+        // border: solid 1px $primary-dark-color;
+        box-shadow: inset -10px 0px 100px 10px $primary-dark-color;
         min-height: 100vh;
         max-width: 20vw;
         min-width: 350px;
@@ -24,11 +24,14 @@
         font-size: 32px;
         width: 100%;
 
-        transition: transform .5s;
+        opacity: 0;
+        transition: transform .5s, opacity .3s;
 
 
-        @include tablet-bp { // temporary remove animation coz of lagging
-            transition: none;
+        @include tablet-bp {
+            max-width: 100dvw;
+            width: 100lvw;
+            height: 100lvh;
         }
 
         &-visible {

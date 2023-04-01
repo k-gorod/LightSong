@@ -7,7 +7,7 @@ interface ILightSongLogoIcon {
     isHighlighted?: boolean | null
 }
 
-export const LightSongLogoIcon: FC<ILightSongLogoIcon> = ({ className, onClick, isHighlighted = false}) => {
+export const LightSongLogoIcon: FC<ILightSongLogoIcon> = ({ className, onClick, isHighlighted }) => {
 
     return (
         <svg onClick={onClick} className={`${styles['lightSongLogoIcon']} ${ isHighlighted ?  styles['lightSongLogoIcon-highlighted'] : ""} ${className ?? ""}`} viewBox="0 0 513 403" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

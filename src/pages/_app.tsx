@@ -31,6 +31,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <meta name="msapplication-TileColor" content="#000" />
           <meta name="theme-color" content="#ffffff" />
         </Head>
+        {/* <video 
+            autoPlay 
+            src={'assets/IMG_1720.mp4'} 
+            muted 
+            loop     
+        /> */}
         <Header />
         <Component {...pageProps} />
         <CenterLogo />

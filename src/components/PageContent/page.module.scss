@@ -6,6 +6,11 @@
     z-index: 2;
     display: grid;
     min-height: 100vh;
+    transition: transform .5s;
+
+    &-disabled {
+        filter: blur(2px);
+    }
 }
 
 // change width and height to 120%
