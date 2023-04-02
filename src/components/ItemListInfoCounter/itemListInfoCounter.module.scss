@@ -1,3 +1,6 @@
+
+@import '../../styles/constants/mixins.scss';
+
 .itemListInfoCounter {
     color: inherit;
     display: grid;
@@ -7,6 +10,12 @@
     align-items: center;
     grid-gap: 5px;
     font-size: 14px;
+
+    @include lg-bp {
+        font-size: 2lvh;
+        grid-template-columns: 1.5lvh auto;
+    }
+
 
     p {
         margin: 0;

@@ -26,6 +26,11 @@
             height: min-content;
             margin: 0;
 
+            @include lg-bp {
+                font-size: 2vh;
+                margin: 3% 0;
+            }
+
         }
     }
 

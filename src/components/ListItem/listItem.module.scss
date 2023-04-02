@@ -1,4 +1,5 @@
 @import '../../styles/constants/variables.scss';
+@import '../../styles/constants/mixins.scss';
 
 .contentList {
     &_listItem {
@@ -14,13 +15,18 @@
         max-height: 80px;
         user-select: none;
 
+        @include lg-bp {
+            max-height: max-content;
+            grid-template-columns: 10lvh auto 10lvh;
+        }
+
         &_iconWrapper {
             overflow: hidden;
             // background: $primary-light-color;
             color: $dark-gray-color;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 60%;
+            height: max-content;
 
             &-shadow {
                 box-shadow: inset 0px -4px 4px rgba(255, 255, 255, 0.5), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -52,6 +58,9 @@
             justify-items: start;
             grid-auto-flow: row;
             grid-gap: 7px;
+
+            width: 60%;
+            height: max-content;
         }
 
         &:hover {

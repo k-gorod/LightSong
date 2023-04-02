@@ -47,15 +47,15 @@ const Sidebar: FC<ISidebar> = () => {
     return (
         <>
             {renderShadow()}
-        <div className={styles['sidebar_wrapper']}>
-            <div className={`${styles['sidebar']} ${isVisible ? styles['sidebar-visible'] : styles['sidebar-hidden'] }`} onClick={clickHandler}>
-                {
-                    menuOptions.map(({text, url}, index)=>(
-                        <Link className={styles['sidebar_item']} onClick={onMenuItemClick} href={`/${url}`} key={`${index}-sidebarItem`}>{text}</Link>
-                    ))
-                }
+            <div className={styles['sidebar_wrapper']}>
+                <div className={`${styles['sidebar']} ${isVisible ? styles['sidebar-visible'] : styles['sidebar-hidden'] }`} onClick={clickHandler}>
+                    {
+                        menuOptions.map(({text, url}, index)=>(
+                            <Link className={styles['sidebar_item']} onClick={onMenuItemClick} href={`/${url}`} key={`${index}-sidebarItem`}>{text}</Link>
+                        ))
+                    }
+                </div>
             </div>
-        </div>
         </>
     )
 }

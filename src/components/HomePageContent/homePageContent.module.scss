@@ -25,6 +25,12 @@
         max-height: 70vh;
     }
 
+
+    @include lg-bp {
+        font-size: 1.3vh;
+        width: 80lvw;
+    }
+
     &_column {
         pointer-events: all;
         position: relative;
